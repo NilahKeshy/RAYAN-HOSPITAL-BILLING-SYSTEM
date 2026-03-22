@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Billing System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="header-brand">
+        <h1>RAYAN HOSPITAL</h1>
+      <H></H> 
+        <form id="billingForm" action="process.php" method="POST">
+            <label>Patient Name:</label>
+            <input type="text" name="patient_name" required>
+
+            <label>Age:</label>
+            <input type="number" name="age" min="0" required>
+
+            <label>Gender:</label>
+            <select name="gender" required>
+                <option value="">Select</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Other">Other</option>
+            </select>
+
+            <label>Contact Number:</label>
+            <input type="tel" name="contact" pattern="[0-9]{10}" placeholder="10-digit number" required>
+
+             <label>Email Address:</label>
+            <input type="email" name="email_address" required>
+
+            <label>Home Address:</label>
+            <textarea name="Home_address" rows="3" required></textarea>
+
+            <label>Next of kin:</label>
+             <select name="next_of_kin_gender" required>
+                <option value="">Select</option>
+                <option value="Parent">Parent</option>
+                <option value="Guardian">Guardian</option>
+                <option value="Sibling">Sibling</option>               
+                <option value="Spouse">Spouse</option>
+             <option value="Relative">Relative</option>
+             <option value="Other">Other</option>
+            </select>
+
+            <label>Phone Number:</label>
+            <input type="tel" name="phone_number" pattern="[0-9]{10}" placeholder="10-digit number" required>
+
+            <label>Email Address:</label>
+            <input type="email" name="email_address" required>
+        
+        </form>
+        <div id="message"></div>
+         <label>Doctor Fee (KES):</label>
+            <input type="number" name="doctor_fee" id="doctor_fee" min="0" required>
+
+            <label>Room Charges (KES):</label>
+            <input type="number" name="room_charges" id="room_charges" min="0" required>
+
+            <label>Medicine Charges (KES):</label>
+            <input type="number" name="medicine_charges" id="medicine_charges" min="0" required>
+
+            <label>Other Charges (KES):</label>
+            <input type="number" name="other_charges" id="other_charges" min="0" required>
+
+            <label>Total Amount (KES):</label>
+            <input type="text" id="total_amount" name="total_amount" readonly>
+
+            <button type="button" onclick="calculateTotal()">Calculate Total</button>
+            <button type="submit">Generate Bill</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
